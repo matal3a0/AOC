@@ -32,20 +32,15 @@ def main():
         print "No input"
         sys.exit(1)
 
-
     programs = 'abcdefghijklmnop'
-
     instructions = readfile(sys.argv[1])
 
     for i in instructions:
         if i[0] == 'x':
-            print i, i.split('/')[0].replace('x','')
             programs = exchange(programs, int(i.split('/')[0].replace('x','')), int(i.split('/')[1]))
         if i[0] == 'p':
             programs = partner(programs, i[1], i[3])
         if i[0] == 's':
-            #programs = spin(i[0].split('/')[1])
-            print i
             programs = spin(programs, int(i.split('s')[1]))
 
     print programs
