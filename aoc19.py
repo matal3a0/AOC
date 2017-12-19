@@ -43,11 +43,8 @@ def main():
     x = paths[0].index('|')
     y = 0
 
-    while True:
-        if paths[y][x] == ' ':
-            print "Steps:",steps
-            break
-        elif paths[y][x].isalpha():
+    while paths[y][x] != ' ':
+        if paths[y][x].isalpha():
             print paths[y][x],
         if d == 's':
             y += 1
@@ -63,6 +60,7 @@ def main():
         steps += 1
     
 
+    print "Steps:",steps
 
 if __name__ == '__main__':
     main()
